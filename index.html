@@ -34,15 +34,6 @@
             margin-bottom: 30px;
             animation: fadeIn 2s ease-in-out;
         }
-        input {
-            padding: 10px;
-            font-size: 1.2rem;
-            border: 2px solid #ff5e78;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 300px;
-            margin-bottom: 20px;
-        }
         button {
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -86,11 +77,12 @@
         document.getElementById("submit-btn").addEventListener("click", () => {
             const inputName = document.getElementById("name").value.trim();
 
-            // Приводим имя к нижнему регистру и сравниваем
             if (inputName.toLowerCase() === "dilfuza" || inputName.toLowerCase() === "дильфуза") {
-                window.location.href = "https://7bhomeprogrammer.github.io/sndsite/"; // Перенаправление
+                window.location.href = "https://7bhomeprogrammer.github.io/sndsite/";
             } else {
-                document.getElementById("error-message").style.display = "block"; // Показываем сообщение об ошибке
+                const errorMessage = document.getElementById("error-message");
+                errorMessage.textContent = "Неверное имя. Попробуй снова.";
+                errorMessage.style.display = "block"; // Показываем сообщение об ошибке
             }
         });
     </script>
