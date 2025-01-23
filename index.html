@@ -75,9 +75,9 @@
 
     <script>
         document.getElementById("submit-btn").addEventListener("click", () => {
-            const inputName = document.getElementById("name").value.trim();
+            const inputName = document.getElementById("name").value.trim().toLowerCase(); // Убираем пробелы и приводим к нижнему регистру
 
-            if (inputName.toLowerCase() === "Gulzada" || inputName.toLowerCase() === "Гульзада") {
+            if (inputName === "gulzada" || inputName === "гульзада") { // Сравнение в нижнем регистре
                 window.location.href = "https://7bhomeprogrammer.github.io/sndsite/";
             } else {
                 const errorMessage = document.getElementById("error-message");
@@ -88,4 +88,3 @@
     </script>
 </body>
 </html>
-
